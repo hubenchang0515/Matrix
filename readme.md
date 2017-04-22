@@ -1,4 +1,7 @@
 # Matrix Public Functions
+
+## Matrix Constructors and Destructor  
+
 ~Matrix() = default;  
 
 Matrix() = default;  
@@ -13,6 +16,8 @@ explicit Matrix(const Vector\<Vector\<double\>\>& matrix);
 
 explicit Matrix(size_t rows, size_t columns);  
 
+## Matrix Public Static Functions  
+
 static Matrix rVector(Vector\<double\> vector);  
 
 static Matrix cVector(Vector\<double\> vector);  
@@ -21,7 +26,11 @@ static Matrix diagonal(Vector\<double\> vector);
 
 static Matrix identity(size_t power);  
 
+## Matrix Print Funtion  
+
 void print();  
+
+## Matrix Elementary Transform Functions  
 
 Matrix& rSwap(size_t ri, size_t rj);  
 
@@ -35,11 +44,19 @@ Matrix& cMultiply(size_t ci, double n);
 
 Matrix& cTransform(size_t ci, size_t cj, double n);  
 
+## Determinant of Square Matrix  
+
 double determinant();  
+
+## Inverse Matrix of Square Matrix  
 
 Matrix inverse();  
 
+## Adjoint Matrix of Square Matrix   
+
 Matrix adjoint();  
+
+## Remove(、Insert or Replace) Row(or Column) of Matrix  
 
 Matrix& rRemove(size_t row);  
 
@@ -61,21 +78,39 @@ Matrix& cReplace(size_t column,const Matrix& cVector);
 
 Matrix& cReplace(size_t column,Vector\<double\> cVector);  
 
+## Get a Column From Matrix  
+
 Matrix column(size_t column);  
+
+## Trust Current as Extended Matrix to Calulate Solve Matrix by Cramer's Rule  
 
 Matrix cramer();  
 
-Matrix& setName(std::string name)  
+## To Set Matrix's Name  
 
-std::string name()  
+Matrix& setName(std::string name);  
 
-size_t rows()  
+## Get Matrix's Name
 
-size_t columns()  
+std::string name();  
 
-bool isAvailable()  
+## Get Number of Rows  
 
-bool isSuccessful()  
+size_t rows();  
+
+## Get Number of Columns  
+
+size_t columns();  
+
+## Check the Matrix if it is Available  
+
+bool isAvailable();  
+
+## Check the Operation if it is Successful   
+
+bool isSuccessful();  
+
+## Override of Operation
 
 Matrix& operator = (const Matrix& matrix);  
 
