@@ -1,4 +1,4 @@
-# Matrix 
+# Matrix Public Functions
 ~Matrix() = default;  
 
 Matrix() = default;  
