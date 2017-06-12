@@ -61,7 +61,7 @@ public:
 	/* calculate the inverse Matrix. */
 	Matrix inverse();
 	/* calculate the adjoint Matrix. */
-	Matrix adjoint();
+	// Matrix adjoint();
 
 	/* Change row or column to be a new Matrix. */
 	/* remove a row */

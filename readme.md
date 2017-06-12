@@ -52,9 +52,9 @@ double determinant();
 
 Matrix inverse();  
 
-## Adjoint Matrix of Square Matrix   
+## ~~Adjoint Matrix of Square Matrix~~   
 
-Matrix adjoint();  
+~~Matrix adjoint();~~  
 
 ## Remove(、Insert or Replace) Row(or Column) of Matrix  
 
