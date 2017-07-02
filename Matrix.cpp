@@ -328,6 +328,7 @@ Matrix Matrix::inverse()
 	return ans;
 }
 
+
 Matrix Matrix::adjoint()
 {
 	if(rows_ != columns_)
