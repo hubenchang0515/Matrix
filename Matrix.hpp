@@ -149,7 +149,6 @@ public:
             throw std::bad_alloc{};
         }
 
-        // memcpy(m_data, src.m_data, sizeof(T) * m_width * m_height);
         std::copy(src.m_data, src.m_data + m_width * m_height, m_data);
     }
 
@@ -300,19 +299,24 @@ public:
         m_width = src.m_width;
         m_height = src.m_height;
 
+        if (m_data != nullptr)
+            delete[] m_data;
+
         m_data = new T[m_width * m_height];
         if (m_data == nullptr)
         {
             throw std::bad_alloc{};
         }
 
-        // memcpy(m_data, src.m_data, sizeof(T) * m_width * m_height);
         std::copy(src.m_data, src.m_data + m_width * m_height, m_data);
         return *this;
     }
 
     Matrix& operator= (Matrix&& src) noexcept
     {
+        if (m_data != nullptr)
+            delete[] m_data;
+
         m_width = src.m_width;
         m_height = src.m_height;
         m_data = src.m_data;
