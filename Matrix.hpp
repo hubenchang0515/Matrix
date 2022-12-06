@@ -1171,6 +1171,7 @@ Matrix<T> operator* (const Matrix<T>& left, const Matrix<T>& right)
         throw std::range_error{makeString("left matrix width %zu not equal to right matrix height %zu", 
                                             left.m_width, right.m_height)};
 
+    auto transpose = right.transpose();
     Matrix<T> result{right.m_width, left.m_height};
     for (size_t row = 0; row < result.m_height; row++)
     {
@@ -1178,7 +1179,7 @@ Matrix<T> operator* (const Matrix<T>& left, const Matrix<T>& right)
         {
             for (size_t i = 0; i < left.m_width; i++)
             {
-                result[row][col] += left[row][i] * right[i][col];
+                result[row][col] += left[row][i] * transpose[col][i];
             }
         }
     }
